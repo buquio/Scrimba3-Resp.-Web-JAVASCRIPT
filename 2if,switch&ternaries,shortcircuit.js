@@ -308,7 +308,7 @@ allowedAccess = isOldEnough >= 18 ? true : false;
 console.log("allowedAccess: ", allowedAccess);
 
 
-// xxx logical operators+short circuit for if/else
+// xxx LOGICAL-OPERATOR-SHORTCIRCUIT for if/else
 const response = "Reed";
  let username;
 
@@ -318,6 +318,9 @@ const response = "Reed";
    username = "guest";
  }
 console.log(username);
+
+//using ternary
+username = response ? "response" : "guest"
 
 // xxx using short circuit
 const response = "Reed";
@@ -333,7 +336,7 @@ console.log(username);
 // console.log(result);
 
 
-xxx
+// xxxLOGICAL-OPERATOR-SHORTCIRCUIT for embeded if statements
 const response = "Reed";
 const isEmailVerified = false;
 
@@ -357,8 +360,7 @@ const username = response || "guest" && isEmailVerified ;
 console.log(username);
 
 
-// Challenge 3: what is the value of user? when the hasValidEmail variable to false? 
-and the response is empty?
+// Challenge 3: what is the value of user when the hasValidEmail variable is false and response is empty?
 	
 const response = "";
 const hasValidEmail = false;
