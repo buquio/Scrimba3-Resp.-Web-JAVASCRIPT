@@ -20,7 +20,7 @@ function echo(input, greeting) {
   console.log(`${greeting} ${input}`);
 }
 
-echo(42, "Hi");//u must specify 2 parameter as function echo  has 2 parameter
+echo(42, "Hi");//u must specify 2 arguments as function echo  has 2 parameter
 
 ----------
 ans=Hi 42
@@ -98,7 +98,7 @@ handleLikePost();
 console.log('like count:', likeCount);
 
 //2.Closure method
-//or u can bring the   likeCount += 1;  and console.log('like count:', likeCount);inside the function bracket
+//or u can bring the likeCount += 1;  and console.log('like count:', likeCount);inside the function bracket
 function handleLikePost() {
   let likeCount = 0; //likeCount can not always be set back to zero u need to add it up(see below example )
   likeCount += 1;  
@@ -193,7 +193,7 @@ function convertTemperature(celsius, decimalPlaces) {
 console.log(convertTemperature(21));
 
 
-orxxx short
+// orxxx short
 function convertTemperature(celsius, decimalPlaces) {
     
   decimalPlaces = decimalPlaces || 1;

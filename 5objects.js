@@ -58,7 +58,7 @@ for (const key in obj) {
 ans:key,"one"
 >key,"two"
 
-xxx  xxxfor-in loop
+// xxx  xxxfor-in loop
 const obj = { one: 1, 
 			  two: 2 };
 
@@ -70,17 +70,17 @@ ans:value,1
 >value,2
 
 
- xx Object.keys(), Object.values(), Object.entries()
+//  xx Object.keys(), Object.values(), Object.entries()
 const user = {
   name: 'John',
   age: 29  
 };
-a.
+// a.
 const ageExists = Object.keys(user).includes('age');
 console.log(ageExists);
-b.
+// b.
  console.log(Object.values(user));
-or
+// or
  const values = Object.keys(user).map(key => user[key]);
  console.log(values);
 
@@ -152,7 +152,8 @@ console.log(usersOver20);
 ans:[{name: "John", age: 29, id: "2345234"}, {name: "Jane", age: 42, id: "8798129"}]
 
 
-XXXXobject property shorthand
+// XXXXobject property shorthand
+//a. normal way
 const bar = "Bar Boca";
 const cafe = "Aku Aku";
 const restaurant = "Colonel Mustard";
@@ -172,7 +173,7 @@ ans:{bar: "Bar Boca", cafe: "Aku Aku", restaurant: "Colonel Mustard"
 // 3. If you're not already using the object property shorthand, refactor your code to do so
 // 4. Create a method on the object - greeting() -  that logs out a message to the console
 // 5. Invoke the greeting() method and also log out your favourite restaurant to the console
-
+//b. object property shorthand way
 const bar = "Bar Boca";
 const cafe = "Aku Aku";
 const restaurant = "Colonel Mustard";
@@ -187,13 +188,15 @@ const favouritePlaces = {
 }
 console.log(favouritePlaces);
 	 
-OR favouritePlaces.greeting();
+// OR 
+favouritePlaces.greeting();
 ans:hello there
 
-OR console.log(favouritePlaces.restaurant)
+// OR 
+console.log(favouritePlaces.restaurant)
 ANS:Colonel Mustard
 
-	 xxx
+	//  xxxadds color 
 const color = 'green';
 const hexCode = '#0f0';
 
@@ -208,7 +211,7 @@ colors[color] = hexCode;//adds color green-hexcode i.e #0f0 to the object list
 console.log(colors);
 ans:
 	 	
-xxx delete
+// xxx delete
 const color = 'black';
 const hexCode = '#000';
 
@@ -225,7 +228,7 @@ delete colors.blue;
 console.log(colors);
 
 	 
-	 xxx getColor
+	//  xxx getColor
 const color = 'black';
 const hexCode = '#000';
 
@@ -243,5 +246,4 @@ colors[color] = hexCode;
  }
 
 console.log(getColor('orange'));
-//console.log(colors);
 
