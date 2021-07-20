@@ -1,8 +1,10 @@
-
-<html>
-  <head>
-    <!-- <link rel="stylesheet" href="DOMstyle.css"> -->
-    <script> src="DOM.js"</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
     <style>
       body {
   margin: 0;
@@ -57,14 +59,19 @@ a {
       </div>
     </main>
       
+    <!-- copy & paste example here  -->
       <script>
+      // const post = document.querySelector(".post");
+      //     post.addEventListener('click', event => {
+      //      console.log(event.target);
+      //    console.log('Do you want to edit this post?')
+      //     });  
       const post = document.querySelector(".post");
-          post.addEventListener('click', event => {
-           console.log(event.target);
-         console.log('Do you want to edit this post?')
-          });
-
-         
+ post.addEventListener('click', event => {
+   console.log(event.target);
+ //    or
+   console.log('Do you want to edit this post?')
+ });
       </script>
       
   </body>

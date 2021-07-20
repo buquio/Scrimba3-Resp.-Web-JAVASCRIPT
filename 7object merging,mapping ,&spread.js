@@ -1,5 +1,5 @@
 	 
-	 xxx merging object
+	//  xxx merging object  helps to merge two or more object into empty one{}
   const user = {
   name: "",
   username: "",
@@ -19,7 +19,7 @@ const verifiedDefault = {
 };
 
 console.log(Object.assign({}, user, newUser, verifiedDefault));-helps to merge two or more object into empty one{}
-orxxx
+// orxxx
 const user = {
   name: "",
   username: "",
@@ -36,7 +36,7 @@ const newUser = {
 
 console.log(Object.assign({}, user, newUser, { verified: false }));
 
-xxx or object assign or use spread
+// xxx or object assign or use spread
 	const user = {
   name: "",
   username: "",
@@ -57,7 +57,7 @@ console.log(createdUser);
 
 
 
-xxxES6 example
+// xxxES6 example
 const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
 
@@ -67,7 +67,7 @@ function removeFirstTwo(list) {
 }
 const arr = removeFirstTwo(source);
 console.log(arr); 
-console.log(source);
+// console.log(source);
 
 
 	 
@@ -86,7 +86,7 @@ const map1 = new Map([
 
 console.log([...map1.keys()])
 	 
-xxxobjects can be used as keys-diff key/value of diff object can be mapped 
+// xxxobjects can be used as keys-diff key/value of diff object can be mapped 
 const user1 = { name: "john" }
 const user2 = { name: "mary" }
 
@@ -158,7 +158,7 @@ const userData = {
 
 userData.askToFriend();
 
-xxx this with arrow fxn
+// xxx this with arrow fxn
 const userData = { 
   username: "Reed",
   title: "JavaScript Programmer",

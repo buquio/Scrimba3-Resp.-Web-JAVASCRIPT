@@ -285,7 +285,7 @@ class Product {
 const product1 = new Product('Coaster', 89.99)
 product1.handleFavoriteProduct()
 
-xxxusing bind/this
+// xxxusing bind/this
 const isAuth = true;
 const user = {
   favorites: []
@@ -315,7 +315,7 @@ const product1 = new Product('Coaster', 89.99)
 product1.handleFavoriteProduct()
 
 
-xxxusing bind for multiple times-use bind/this +put favorite function inside the class constructor.
+// xxxusing bind for multiple times-use bind/this +put favorite function inside the class constructor.
 const isAuth = true;
 const user = {
   favorites: []

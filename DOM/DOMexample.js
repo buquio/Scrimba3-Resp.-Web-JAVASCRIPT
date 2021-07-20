@@ -1,5 +1,5 @@
 
-xxxx FOR ALL CODE BELOW REFER TO DOM.html/VIEW IN CONSOLE-BROWSER
+// xxxx FOR ALL CODE BELOW REFER TO DOM.html, copy and paste code into script-tag & VIEW IN CONSOLE-BROWSER
 
  //1
  const el = document.getElementById('home')
@@ -9,7 +9,7 @@ xxxx FOR ALL CODE BELOW REFER TO DOM.html/VIEW IN CONSOLE-BROWSER
    //2
    const links = document.querySelectorAll('a');
  console.log(links);
- // ans:	NodeList
+ // ans:	<NodeList length="3"></NodeList>
 
  //3
    const links = document.querySelectorAll('a');

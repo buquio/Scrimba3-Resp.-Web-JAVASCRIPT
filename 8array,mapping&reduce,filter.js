@@ -1,4 +1,4 @@
-Arrays contains several object.
+// Arrays contains several object.
 xxxarray
 const todos = [];
 
@@ -99,7 +99,7 @@ const songs = [
 ]
 //1
 const hasWonGrammy = songs.some(song => song.wonGrammy === true);
-//or
+//same as
 const hasWonGrammy = songs.some(song => song.wonGrammy);
 console.log(hasWonGrammy);
 //2
@@ -119,7 +119,8 @@ const newTemps = temperatures.map(temperature => {
 return temperature;
 });
 console.log(newTemps);
-ANS  [
+// answer
+[
   { degrees: 69, isRecordTemp: true },
   { degrees: 82, isRecordTemp: true },
   { degrees: 73, isRecordTemp: true },
@@ -128,7 +129,7 @@ ANS  [
 
 
 //2 map & ...spread -to alert users
-const newTemps =temperatures.map(temperature => //perform a function on each of the item
+const newTemps =temperatures.map(temperature => //set temp > 70 to ishigh:true
 temperature.degrees > 70 ? { ...temperature, isHigh: true } : temperature )
 console.log(newTemps);
 ANS [
@@ -185,22 +186,20 @@ const results = restaurants.filter(restaurant => restaurant.name.startsWith(''))
 console.log(results);
 ans:[{name: "Cap City Diner", milesAway: 2.2}, {name: "Chop Shop", milesAway: 4.1}, {name: "Northstar Cafe", milesAway: 0.9}, {name: "City Tavern", milesAway: 0.5}, {name: "Shake Shack", milesAway: 5.3}]
 //3
-const results = restaurants.filter(restaurant => true);
+const results = restaurants.filter(restaurant => restaurant = true);
 console.log(results);
 ans:[{name: "Cap City Diner", milesAway: 2.2}, {name: "Chop Shop", milesAway: 4.1}, {name: "Northstar Cafe", milesAway: 0.9}, {name: "City Tavern", milesAway: 0.5}, {name: "Shake Shack", milesAway: 5.3}]
 //4
-const results = restaurants.filter(restaurant => 
-  restaurant.name.startsWith('C') && restaurant.milesAway < 3)
+const results = restaurants.filter(restaurant => restaurant.name.startsWith('C') && restaurant.milesAway < 3)
 console.log(results);
 ans:[{name: "Cap City Diner", milesAway: 2.2}, {name: "City Tavern", milesAway: 0.5}]
 //5
-const result = restaurants.find(restaurant => 
-  restaurant.name.toLowerCase().includes('north') && restaurant.milesAway < 2)
+const result = restaurants.find(restaurant => restaurant.name.toLowerCase().includes('north') && restaurant.milesAway < 2)
 console.log(result);
 ans:{name: "Northstar Cafe", milesAway: 0.9}
 
 
-xxx-METHOD -reduce
+// xxx-METHOD -reduce
 const menuItems = [
   { item: "Blue Cheese Salad", price: 8 },
   { item: "Spicy Chicken Rigatoni", price: 18 },
@@ -210,14 +209,14 @@ const menuItems = [
   { item: "Pan Seared Ribeye", price: 31 }
 ];
 
-const total = menuItems.reduce((accumulator, menuItem) => {
+const total = menuItems.reduce((accumulator, menuItem) => { // takes 2 parameter accumulator & accumulated-value
   console.log(` accumulator: ${accumulator}, menu item price: ${menuItem.price}
   `);
   return accumulator + menuItem.price;  
 }, 0);
 console.log(total);
-
-ans:accumulator: 0, menu item price: 8
+ANS
+>accumulator: 0, menu item price: 8
 >accumulator: 8, menu item price: 18
 >accumulator: 26, menu item price: 23
 >accumulator: 49, menu item price: 13
@@ -245,9 +244,9 @@ const totalWeight = cars.reduce((accumulator, car) => {
     if (car.isElectric) {
         return accumulator + car.weight;
     } else {
-        return accumulator;
+        return accumulator; //initial accumulator
     }
-}, 0)
+}, 0)  //initial accumulator
 
 console.log(totalWeight);
 
@@ -257,7 +256,7 @@ const numbers = [1, 2, 3, 4, 5, 6];
 const doubledNumbers = numbers.reduce((acc, num) => {
   acc.push(num * 2);
   return acc;
-}, []);
+}, []); //initial accumulator-acc
 console.log('doubled numbers', doubledNumbers);
 console.log('numbers', numbers);
 
@@ -289,7 +288,7 @@ const greaterNumbers = numbers.filter(num => num > 3);
 console.log(greaterNumbers);
 
 //or using reduce/arrow fxn
-const greaterNumbers = numbers.reduce((acc, num) => num > 3 ? acc.concat(num) : acc, []);// concat arrange it vertically
+const greaterNumbers = numbers.reduce((acc, num) => num > 3 ? acc.concat(num) : acc, []);
 console.log(greaterNumbers);
 
 ans:[4, 5, 6]
@@ -313,14 +312,18 @@ const allMenuIdeas = lunchMenuIdeas.concat('Club Sandwich');
 console.log(allMenuIdeas);
 console.log(lunchMenuIdeas);//does not contains same as allMenuIdeas
 
-3 using spread method
+// 3 using spread method
 const lunchMenuIdeas = ['Harvest Salad', 'Southern Fried Chicken'];
 
 const allMenuIdeas = [...lunchMenuIdeas];
 
 allMenuIdeas.push('Club Sandwich');
 
-//1
+console.log(allMenuIdeas);
+console.log(lunchMenuIdeas);//does not contains same as allMenuIdeas;it remain d same
+
+
+////////XXXXXXXXX1
 const breakfastMenuIdeas = ["Buckwheat Pancakes"];
 const dinnerMenuIdeas = ["Glazed Salmon", "Meatloaf", "American Cheeseburger"];
 
@@ -340,7 +343,8 @@ const allMenuIdeas = [
 	...dinnerMenuIdeas
 ];
 console.log(allMenuIdeas);
-2b
+
+// 2b
  const otherMenuIdeas = [...breakfastMenuIdeas, ...allMenuIdeas];
  console.log(otherMenuIdeas );
 
@@ -366,7 +370,7 @@ const finalMenuIdeas = [
 console.log(finalMenuIdeas);
 
 
-xxx slicing off "meatloaf"
+// xxx slicing off "meatloaf"
 const breakfastMenuIdeas = ["Buckwheat Pancakes"];
 const dinnerMenuIdeas = ["Glazed Salmon", "Meatloaf", "American Cheeseburger"];
 

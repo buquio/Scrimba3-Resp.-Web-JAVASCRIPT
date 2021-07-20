@@ -77,7 +77,9 @@ ans:Afred Hitchcock
 >   ["Thriller"]
 >   Film: Rear Window
 
-xxx
+
+
+xxx///////////
 class Product {
   constructor(name, price, discountable) {
     this.name = name;
@@ -89,7 +91,7 @@ class Product {
 console.log(new Product("Coffee Maker", 99, true));
 ans:Product
 
-xxx class constructor inside class constructor
+// xxx class constructor inside class constructor
 class Product {
   constructor(name, price, discountable) {
     this.name = name;

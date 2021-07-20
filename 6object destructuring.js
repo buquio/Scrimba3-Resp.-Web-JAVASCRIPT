@@ -2,7 +2,6 @@
 const user = {
   name: "Reed",
   username: "Reedbarger",
-
 	email: "reed@gmail.com",
   details: {
     title: "Programmer"  
@@ -37,7 +36,7 @@ function displayUserBio() {
 
 displayUserBio()
 	 
-xx-OR shorter-write by putting the destructure inside the function argument.
+// xx-OR shorter-write by putting the destructure inside the function argument.
 const user = {
   name: "Reed",
   username: "Reedbarger",

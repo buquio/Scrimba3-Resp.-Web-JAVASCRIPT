@@ -1,20 +1,20 @@
-xxx array destructure
+// xxx array destructure
 const finalMenuItems = [
   "American Cheeseburger",
   "Southern Fried Chicken",
   "Glazed Salmon"
 ];
 
-const [first, second, third] = finalMenuItems;
+//  let first = finalMenuItems[0];
+//  let second = finalMenuItems[1];
+//  let third = finalMenuItems[2];
 
- let first = finalMenuItems[0];
- let second = finalMenuItems[1];
- let third = finalMenuItems[2];
+const [first, second, third] = finalMenuItems;
 
  console.log(first, second, third);
 ans:American Cheeseburger Southern Fried Chicken Glazed Salmon
 
-xxx
+// xxx//////
 const finalMenuItems = [
   "American Cheeseburger",
   "Southern Fried Chicken",
@@ -37,13 +37,10 @@ const finalMenuItems = [
 
 let [first, second] = finalMenuItems;
 [second, first] = [first, second];
-// let first = finalMenuItems[0];
-// let second = finalMenuItems[1];
-// let third = finalMenuItems[2];
 
-// console.log(first, second, third);
+console.log(first, second, third);
 
-xxxusing your own varible e.g winner,losers
+// xxxusing your own varible e.g winner,losers
 const finalMenuItems = [
   "American Cheeseburger",   //	-winneri.e you name one winners other are losers
   "Southern Fried Chicken",  //	-losers
@@ -63,12 +60,12 @@ xxx
 
 // Modify these four variables first i.e chefsDishes start with 'S' while regularDishes are others
 const fishDishes = ['Salmon Rillettes', 'Grilled Tuna Provencal', 'Fish and Chips']
-let [chefsFishDishes, ...regularFishDishes] = fishDishes;//means chefsFishDishes=Salmon Rillettes&regularFishDishes=others
+let [chefsFishDishes, ...regularFishDishes] = fishDishes;//means chefsFishDishes=Salmon Rillettes & regularFishDishes=others(destructure)
 
 const meatDishes = ['Lasagna', 'Spaghetti', 'Satay Chicken Skewers']
 let [regularMeatDishes ,...chefsMeatDishes] = meatDishes;//same as above
-//note:you put .... if they are many but no.... if only one item
- console.log(chefsFishDishes);
+
+console.log(chefsFishDishes);
  console.log(regularFishDishes);
  console.log(regularMeatDishes);
  console.log(chefsMeatDishes);
@@ -79,7 +76,8 @@ ans:Salmon Rillettes
 >["Spaghetti", "Satay Chicken Skewers"]
 
 //b. Finally, use the spread operator to create all chefsDishes(all S)&regularDishes
-let chefsDishes = [...chefsMeatDishes, chefsFishDishes]
+let chefsDishes = [...chefsMeatDishes, chefsFishDishes] //note:you put .... if they are many but no.... if only one item
+
 let regularDishes = [...regularFishDishes, regularMeatDishes];
 
 console.log(chefsDishes); //or console.log(`chefsDishes:${chefsDishes}`);

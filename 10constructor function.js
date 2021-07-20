@@ -1,34 +1,28 @@
-xxx  normal object with function inside
+//a.  normal object with function inside
 const student = {
   id: 1,
   name: "Reed",
   subjects: [],
   addSubject(subject) {
-    this.subjects = [...this.subjects, subject];//previous objrct, new object
+    this.subjects = [...this.subjects, subject];//[], new subject
   }
 }
-
-student.addSubject('Math');
 console.log(student.subjects);
 
-xxx constructor function
- const student = {
-   id: 1,
-   name: "Reed",
-   subjects: [],
-   addSubject(subject) {
-     this.subjects = [...this.subjects, subject];
-   }
- }
- // or use constructor function or template
-function Student(id, name, subjects = []) {
+//b. using  constructor function
+function Student(id, name, subjects = []) { //constructor template
   this.id = id;
   this.name = name;
   this.subjects = subjects;  
 }
-console.log(new Student(1, 'Reed'));
+const student1 = new Student(1, 'Reed');
+console.log(student1);
 
-xxx
+
+
+
+
+//a. xxx
  const student = {
    id: 1,
    name: "Reed",
@@ -37,7 +31,10 @@ xxx
      this.subjects = [...this.subjects, subject];
    }
  }
-// or use constructor function to add function addSubject.
+ student.addSubject('Math');
+ console.log(student.subjects);
+
+//b. using constructor function to add function addSubject.
 function Student(id, name, subjects = []) {
   this.id = id;
   this.name = name;
@@ -47,7 +44,7 @@ function Student(id, name, subjects = []) {
 Student.prototype.addSubject = function(subject) {
   this.subjects = [...this.subjects, subject];   
 }
-const student1 = new Student(1, 'Reed');
+ const student1 = new Student(1, 'Reed');
  const student2 = new Student(2, 'Doug');
  
  student1.addSubject('Math');
@@ -55,7 +52,13 @@ const student1 = new Student(1, 'Reed');
 
  console.log(student1.subjects);
  console.log(student2.subjects);
-xxx
+
+ console.log(student1);
+ console.log(student2);
+
+
+
+ // xxx
 // 1. create a new constructor function, Book, which logs books in the school library (id, title, author, themes[]), 
 // 2. Add ids, titles and authors for your two favourite books. 
 // 3. Use the prototype keyword to add a theme property to the  books. 
@@ -84,7 +87,6 @@ Book.prototype.addTheme = function(newTheme) {
 	this.themes = [...this.themes, newTheme];
 }
 
-
 book1.addTheme("Fantasy");
 book2.addTheme("Corruption");
 
@@ -95,7 +97,7 @@ ans:["Fantasy"]
 >["Corruption"]
 
 xxx
-// prototypical inheritance - each instantiated objecte.g new student (frm constructor function) inherits from prototype
+// prototypical inheritance - each instantiated objecte.g new student inherits from prototype
 
 // every object has prototype
 

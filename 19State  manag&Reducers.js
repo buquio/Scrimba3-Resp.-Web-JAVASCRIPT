@@ -55,7 +55,7 @@ Reducers
 // (state, action) => newState;
 
 
-xxx with state e.g count
+// xxx with state e.g count
 function counterReducer(count, action) {
   return count + 1;  
 }
@@ -63,7 +63,7 @@ function counterReducer(count, action) {
 console.log(counterReducer(0) === 1);
 
 
-xxx with action-type by returning count e.g increment/decrement
+// xxx with action-type by returning count e.g increment/decrement
 function counterReducer(count, action) {
   switch (action.type) {
     case 'INCREMENT':
@@ -110,12 +110,12 @@ function userReducer(state, action) {
        return state; 
   }  
 }
-{ type: 'CHANGE_EMAIL', payload: { name: 'Joe' } }
+{ type: 'CHANGE_NAME', payload: { name: 'Joe' } }
 // or { type: 'CHANGE_EMAIL', payload: { email: 'joe@gmail.com' } }
 
 
 
-xxx real example1
+// xxx real example1
 const initialUser = {
   name: 'Mark',
   email: 'mark@gmail.com'  

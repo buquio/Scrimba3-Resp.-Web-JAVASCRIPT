@@ -15,13 +15,13 @@
 
 //fetch is used basically for promises
 
-// GET /posts/1 - single blog post
+//1. GET /posts/1 - single blog post
 fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(response => response.json())
   .then(data => console.log(data.title))
 
 
-// POST sending to https...../posts you pass a configuration object as the 2nd agurment
+//2. POST sending to https...../posts you pass a configuration object as the 2nd agurment
 const blogPost = {
   title: "Cool post",
   body: "lkajsdflkjasjlfda",
@@ -33,14 +33,13 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   headers: {
      "Content-Type": "application/json" 
   },
-  body: JSON.stringify(blogPost)
+  body: JSON.stringify(blogPost) //send to post-url
 })
   .then(response => response.json())
   .then(data => console.log(data))
 
-xxxx
-note; if u have a failed,the promise will run but the catch will not show a visible error so you have to manually set it.
-xxx using our own error message or error statuscode
+// xxxx3. error handling
+// note; if u have a failed,the promise will run but the catch will not show a visible error so you have to manually set it,using our own error message or error statuscode
 fetch('https://jsonplaceholder.typicode.com/pots/1')
   .then(response => {
       if (!response.ok) {
@@ -53,9 +52,11 @@ fetch('https://jsonplaceholder.typicode.com/pots/1')
 
 
 
-xxx
-check this out
-// https://github.com/public-apis/public-apis ---list of API, no authentic/API key to use it
+// / check this out--list of API, no authentic/API key to use it
+ // https://github.com/public-apis/public-apis 
+
+
+
 
 // Challenge: 
  //1 Fetch the JSON Placeholder API which has /users endpoint, 
@@ -74,22 +75,19 @@ fetch("https://jsonplaceholder.typicode.com/users/3")
 .then(person => {
     console.log(person)
 });
-  // .then(data => console.log(data))
-
-ans:
-{id: 3, name: "Clementine Bauch", username: "Samantha", email: "Nathan@yesenia.net", address: {street: "Douglas Extension", suite: "Suite 847", city: "McKenziehaven", zipcode: "59590-4157", geo: {lat: "-68.6102", lng: "-47.0653"}}, phone: "1-463-123-4447", website: "ramiro.info", company: {name: "Romaguera-Jacobson", catchPhrase: "Face to face bifurcated interface", bs: "e-enable strategic applications"}}
+// ans: {id: 3, name: "Clementine Bauch", username: "Samantha", email: "Nathan@yesenia.net", address: {street: "Douglas Extension", suite: "Suite 847", city: "McKenziehaven", zipcode: "59590-4157", geo: {lat: "-68.6102", lng: "-47.0653"}}, phone: "1-463-123-4447", website: "ramiro.info", company: {name: "Romaguera-Jacobson", catchPhrase: "Face to face bifurcated interface", bs: "e-enable strategic applications"}}
 //3
 .then(person => {
     console.log(person.name);
     console.log(person.company.name);
 });
-ans:Clementine Bauch
->Romaguera-Jacobson
+// ans:Clementine Bauch
+// >Romaguera-Jacobson
 //4
 .then(person => {
     console.log(`${person.name} works for ${person.company.name}`);
 });
-ans:Clementine Bauch works for Romaguera-Jacobson
+// ans:Clementine Bauch works for Romaguera-Jacobson
 
 //5 Handle errors if something does not quite work -using .catch 
 fetch("https://jsonplaceholder.typicode.com/users/3")
@@ -108,8 +106,8 @@ ans:no error-Clementine Bauch works for Romaguera-Jacobson
 ans:error-404.(try to alter the code a little-it will give you error)
 
 
-XXX HANDLING PROMISES THE NEW WAY resolving promises and immediately storing it in a variable(like async)
-xxxsimple old 
+// XXX HANDLING PROMISES using async function NEW WAY resolving promises and immediately storing it in a variable(like async)
+// xxxusing async function
 async function getBlogPost() {}
 
 getBlogPost().then(() => console.log('works as a promise'));
@@ -121,7 +119,7 @@ async function getBlogPost() {
 
 getBlogPost().then(value => console.log(value));
 
-xxx old way
+// xxx old way
 function getBlogPost() {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => resolve('blog post'), 1000);
@@ -135,7 +133,7 @@ function getBlogPost() {
 getBlogPost()
 
 
-xxx NEW WAY storing it in a variable + asyn function+ await promise(blog post) 
+// xxx NEW WAY storing it in a variable + asyn function+ await promise(blog post) 
 async function getBlogPost() {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => resolve('blog post'), 1000);
@@ -150,7 +148,7 @@ getBlogPost()
 ans:blog post
 >done
 
-xxx NEW WAY storing it in a variable + asyn function + await fetch(api)
+// xxx NEW WAY storing it in a variable + asyn function + await fetch(api)
 // const response = fetch('https://jsonplaceholder.typicode.com/posts/1');
 //   .then(response => response.json())
 //   .then(data => console.log(data));
@@ -164,7 +162,7 @@ getPost();
 ans:{userId: 1, id: 1, title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", body: "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"}
 
 
-XXXX HANDLING ERRORS
+// XXXX HANDLING ERRORS
 NOTE: normally an async funtion is suppose to silently fail// promise.reject--failed promise 
 async function runAsync() {
   await Promise.reject();
@@ -174,7 +172,7 @@ async function runAsync() {
 runAsync();//does not show the Error
 
 
-xxx Catch asyn &syn errors using try/catch method    
+// xxx Catch asyn &syn errors using try/catch method    
 xxxx
 NOTE-await helps to covert reject/fail promises to errors&catch them as errors,normally it fail silently
     - await can also catch normal errors(syn)e.g Cannot set property 'someProperty' of null                              
@@ -213,7 +211,7 @@ async function runAsync() {
 runAsync().catch(error => console.error(error));
 
 
-xxxExample: getting a user Error from github url Error(asyn/throw new error)
+xxxExample: catching error using try/catch + if/.ok
 async function getGithubUser() {
   try {    
     const response = await fetch('https://api.github.com/users/laksjdflasjfdlkjadfjk');// error here
@@ -227,7 +225,7 @@ async function getGithubUser() {
 getGithubUser();
 
 
-xxxxExample: to notify user of error
+// xxxxExample: to notify user of error
 async function getGithubUser() {
   try {    
     const response = await fetch('https://api.github.com/users/laksjdflasjfdlkjadfjk');// error here
@@ -263,7 +261,6 @@ xxx// Challenge tip:
 
 //D. catch any errors using asyn/try/catch & display errors in the console
        // catch any errors & display errors in the console
-------------------
 
 
 //A.GET API call & catch error the normal/old way using .catch
